@@ -2,8 +2,8 @@
 import os
 
 
-def say_hello(name, apellido=""):
-    print(f"Hola, {name} {apellido}")
+def say_hello(name, last_name=""):
+    print(f"Hola, {name} {last_name}")
 
 
 def print_categories():
@@ -29,15 +29,17 @@ def suma_multiplica(n1, n2, n3):
 
 
 def explicar_pizza(rebanadas, consumidas):
-    quedan = rebanadas - consumidas
+    quedan = float(rebanadas) - float(consumidas)
     if quedan < 0:
         print(f"De las {rebanadas} rebanadas de pizza que trajeron, todas se consumieron! Ya no queda nada.")
     else:
-        print(f"De las {rebanadas} rebanadas de pizza que trajeron, se comieron {consumidas}. Ahora quedan {quedan}. Provecho!")
+        print(f"De las {rebanadas} rebanadas de pizza que trajeron, se comieron {consumidas}."
+              f" Ahora quedan {quedan}. Provecho!")
 
 
-def edades(nombre, edad):
-    print(f"Hola, {nombre}! Veo que el año pasado tenías {edad - 1} años y seguro el próximo año cumplirás {edad + 1} años.")
+def edades(name, age):
+    print(f"Hola, {name}! Veo que el año pasado tenías {age - 1}"
+          f" años y seguro el próximo año cumplirás {age + 1} años.")
 
 
 def divide_cuenta():
@@ -45,31 +47,35 @@ def divide_cuenta():
     propina = input("Ahora, ingresa el porcentaje de propina (%): $ ")
     impuesto = input("¿Y el impuesto? (%) $ ")
     personas = input("¿Cuantas personas son ustedes? $ ")
-    total = float(total_pagar) + (float(total_pagar) * (float(propina) / 100)) + (float(total_pagar) * (float(impuesto) / 100))
+    total = float(total_pagar) + (float(total_pagar) * (float(propina) / 100)) + \
+        (float(total_pagar) * (float(impuesto) / 100))
     print(f"El total a pagar con impuestos y propina es: Q.{total}")
-    print(f"Cada uno debe pagar: Q.{float(total) / float(personas)}")
+    print(f"Cada uno debe pagar: Q.{round(float(total) / float(personas), 2)}")
 
-def calcula_tiempo(dias):
-    dias = float(dias)
-    horas = dias * 24
+
+def calcula_tiempo(days):
+    days = float(days)
+    horas = days * 24
     minutos = horas * 60
     segundos = minutos * 60
     print(
-        f"En {dias} días, hay:" \
-        f"\n    {horas} horas;" \
-        f"\n    {minutos} minutos;" \
+        f"En {days} días, hay:"
+        f"\n    {horas} horas;"
+        f"\n    {minutos} minutos;"
         f"\n    {segundos} segundos"
     )
 
-def convertir_kms(millas):
-    factor = 1.609344 # km
-    km = float(millas) * factor
-    km = round(km, 2)
-    print(f"Interesante... En {millas}mi, hay {km}Km")
 
-def numero_en_otro(num_m_100, num_M_1000):
-    veces = num_M_1000 // num_m_100
-    print(f"En el número {num_M_1000} hay aproximádamente {veces} veces el número {num_m_100}.")
+def convertir_kms(miles):
+    factor = 1.609344  # km
+    km = float(miles) * factor
+    km = round(km, 2)
+    print(f"Interesante... En {miles}mi, hay {km}Km")
+
+
+def numero_en_otro(num_me_100, num_ma_1000):
+    veces = num_ma_1000 // num_me_100
+    print(f"En el número {num_ma_1000} hay aproximádamente {veces} veces el número {num_me_100}.")
 
 
 if __name__ == "__main__":
@@ -125,7 +131,7 @@ if __name__ == "__main__":
    
     elif num_reto == 7:
         nombre = input("Ingresa tu nombre: $ ")
-        edad = input("Ingresa tu edad: $ ")
+        edad = float(input("Ingresa tu edad: $ "))
         edades(nombre, edad)
 
     elif num_reto == 8:
