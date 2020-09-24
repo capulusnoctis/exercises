@@ -100,6 +100,7 @@ if __name__ == "__main__":
     num_reto = input("Seleccione el reto $ ")
     num_reto = int(num_reto)
     os.system("clear")
+    os.system("cls")
 
     if num_reto == 1:
         nombre = input("Ingrese el nombre: $ ")
