@@ -39,6 +39,15 @@ def en_rango(n1, n2) -> str:
         return frase.format(n2, "excede el límite permitido.")
 
 
+def rango_cambiante(n1, n2, n3):
+    aviso = "El número {} {}"
+
+    if n3 < n2:
+        return aviso.format(n3, "está por debajo del rango")
+    else:
+        return en_rango(n1, n3)
+
+
 if __name__ == '__main__':
     retos: list = [
         "1. Número Mayor y menor",
@@ -66,9 +75,12 @@ if __name__ == '__main__':
             num2: int = int(input("Ingresar segundo número: $ "))
             print(en_rango(num1, num2))
         elif num_reto == 3:
-            pass
+            num1: int = int(input("Ingresar número como limite superior: $ "))
+            num2: int = int(input("Ingresar número como límite inferior: $ "))
+            num3: int = int(input("Ingresar número a comparar: $ "))
+            print(rango_cambiante(num1, num2, num3))
         else:
             print("Cuak Cuak!")
 
     except ValueError:
-        print("Se ingresó un valor diferente al esperado")
+        print("Se ingresó un valor de tipo diferente al esperado")
