@@ -48,6 +48,14 @@ def rango_cambiante(n1, n2, n3):
         return en_rango(n1, n3)
 
 
+def turtles(animalito):
+    variantes = ['TORTUGA', 'TORTUGOTA', 'TORTUGUITA']
+    if variantes.__contains__(animalito.upper()):
+        return 'A mí también me gustan las tortugas'
+    else:
+        return 'Ese animal es genial, pero prefiero las tortugas'
+
+
 if __name__ == '__main__':
     retos: list = [
         "1. Número Mayor y menor",
@@ -79,6 +87,9 @@ if __name__ == '__main__':
             num2: int = int(input("Ingresar número como límite inferior: $ "))
             num3: int = int(input("Ingresar número a comparar: $ "))
             print(rango_cambiante(num1, num2, num3))
+        elif num_reto == 4:
+            animal: str = input("Ingresar un animal: $ ")
+            print(turtles(animal))
         else:
             print("Cuak Cuak!")
 
