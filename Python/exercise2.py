@@ -74,6 +74,15 @@ def clima():
         print("Respuesta invalida. Hasta luego!")
 
 
+def edad_permitida(edad) -> str:
+    if edad > 30:
+        return "Nunca es tarde para aprender. ¿Qué curso tomaremos?"
+    elif 29 >= edad >= 18:
+        return "Es un momento excelente para impulsar tu carrera"
+    else:
+        return "¿Sabes hacia dónde dirigir tu futuro? Seguro puedo ayudarte"
+
+
 if __name__ == '__main__':
     retos: list = [
         "1. Número Mayor y menor",
@@ -110,6 +119,9 @@ if __name__ == '__main__':
             print(turtles(animal))
         elif num_reto == 5:
             clima()
+        elif num_reto == 6:
+            edad_usuario: int = int(input("Por favor, ingresa tu edad: $ "))
+            print(edad_permitida(edad_usuario))
         else:
             print("Cuak Cuak!")
 
