@@ -39,7 +39,7 @@ def en_rango(n1, n2) -> str:
         return frase.format(n2, "excede el límite permitido.")
 
 
-def rango_cambiante(n1, n2, n3):
+def rango_cambiante(n1, n2, n3) -> str:
     aviso = "El número {} {}"
 
     if n3 < n2:
@@ -54,6 +54,24 @@ def turtles(animalito):
         return 'A mí también me gustan las tortugas'
     else:
         return 'Ese animal es genial, pero prefiero las tortugas'
+
+
+def clima():
+    print("¿Está lloviendo?")
+    r: str = input("Respuesta: (si/no) $ ")
+    if r.upper() == 'SI' or r.upper() == 'S':
+        print("¿Está haciendo mucho viento?")
+        r: str = input("Respuesta: (si/no) $ ")
+        if r.upper() == 'SI' or r.upper() == 'S':
+            print("Está haciendo mucho viento para salir con sombrilla")
+        elif r.upper() == 'NO' or r.upper() == 'N':
+            print("Recomiendo fuertemente llevar sombrilla al salir")
+        else:
+            print("Respuesta invalida. Hasta luego!")
+    elif r.upper() == 'NO' or r.upper() == 'N':
+        print("¡Que tengas un bonito día!")
+    else:
+        print("Respuesta invalida. Hasta luego!")
 
 
 if __name__ == '__main__':
@@ -90,6 +108,8 @@ if __name__ == '__main__':
         elif num_reto == 4:
             animal: str = input("Ingresar un animal: $ ")
             print(turtles(animal))
+        elif num_reto == 5:
+            clima()
         else:
             print("Cuak Cuak!")
 
