@@ -83,6 +83,23 @@ def edad_permitida(edad) -> str:
         return "¿Sabes hacia dónde dirigir tu futuro? Seguro puedo ayudarte"
 
 
+def mensajes_opcionales(opc) -> str:
+    if opc < 1 or opc > 6:
+        return "Por favor, ingrese un número entre 1 y 6"
+
+    msjs = [
+        "Hoy aprenderemos sobre prorgamación",
+        "¿Qué tal tomar un curso de marketing digital?",
+        "Hoy es un gran día para comenzar a aprender de diseño",
+        "¿Y si aprendemos algo de negocios online?",
+        "Veamos un par de clases sobre producción audiovisual",
+        "Tal vez sea bueno desarrollar una habilidad blanda en Platzi"
+    ]
+    opcion = opc - 1
+
+    return msjs[opcion]
+
+
 if __name__ == '__main__':
     retos: list = [
         "1. Número Mayor y menor",
@@ -122,6 +139,9 @@ if __name__ == '__main__':
         elif num_reto == 6:
             edad_usuario: int = int(input("Por favor, ingresa tu edad: $ "))
             print(edad_permitida(edad_usuario))
+        elif num_reto == 7:
+            numero: int = int(input("Ingrese un número entre 1 y 6: $ "))
+            print(mensajes_opcionales(numero))
         else:
             print("Cuak Cuak!")
 
